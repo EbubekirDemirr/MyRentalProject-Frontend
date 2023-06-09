@@ -1,0 +1,26 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Ad</th>
+      <th>Soyad</th>
+      <th>Araba</th>
+      <th>Marka</th>
+    </tr>
+  </thead>
+
+  <tr *ngFor="let rentalDetail of rentalDetails">
+    <td>
+      {{ rentalDetail.firstName }}
+    </td>
+    <td>
+      {{ rentalDetail.lastName }}
+    </td>
+    <td>
+      {{ rentalDetail.carName }}
+    </td>
+    <td>
+      {{ rentalDetail.brandName }}
+    </td>
+  </tr>
+</table>
+

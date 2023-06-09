@@ -1,0 +1,16 @@
+<ul class="list-group">
+  <li class="list-group-item">
+    <thead>
+      <tr>
+        <th>RENKLER</th>
+      </tr>
+    </thead>
+  </li>
+  <li
+    routerLink="cars/color/{{ color.colorId }}"
+    class="list-group-item"
+    *ngFor="let color of colors"
+  >
+    {{ color.colorName }}
+  </li>
+</ul>

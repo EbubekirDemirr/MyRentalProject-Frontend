@@ -1,0 +1,34 @@
+<!-- <ul class="list-group">
+  <li class="list-group-item">
+    <thead>
+      <tr>
+        <th>MARKA</th>
+      </tr>
+    </thead>
+  </li>
+  <li
+    routerLink="cars/brand/"
+    class="list-group-item"
+    *ngFor="let brand of brands"
+  >
+    {{ brand.brandName }}
+  </li>
+</ul> -->
+
+<ul class="list-group">
+  <li class="list-group-item">
+    <thead>
+      <tr>
+        <th>MARKA</th>
+      </tr>
+    </thead>
+  </li>
+  <li
+  routerLink="cars/brand/{{brand.brandId}}"
+    *ngFor="let brand of brands"
+    class="list-group-item passive"
+    aria-current="true"
+  >
+   {{brand.brandName}}
+  </li>
+</ul>
