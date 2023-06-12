@@ -22,5 +22,16 @@ apiUrl2="https://localhost:44347/api/"
   getRentalDetail():Observable<ListResponseModel<RentalDetail>>{
     return this.httpClient.get<ListResponseModel<RentalDetail>>(this.apiUrl1)
   }
+  rentalAdd(rental:Rental):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl2+"/Rental/add",rental)
+  }
+
+  isCarAvaible(carId:number){
+    let newPath=this.apiUrl2+"Rental/iscaravaible?cardId="+carId;
+    return this.httpClient.get<ResponseModel>(newPath);
+
+  }
+
+
 }
 
