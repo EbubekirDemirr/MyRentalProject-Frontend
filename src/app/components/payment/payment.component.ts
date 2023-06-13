@@ -21,6 +21,7 @@ export class PaymentComponent implements OnInit {
   carId: number;
   rentDate: Date;
   returnDate: Date;
+  dailyPrice:number;
 
   constructor(
     private paymentService: PaymentService,
@@ -76,6 +77,7 @@ export class PaymentComponent implements OnInit {
   }
 
   totalAmount() {
+
     const start = new Date(this.rentDate).getTime();
     const end = new Date(this.returnDate).getTime();
     const diff = end - start;
@@ -87,4 +89,6 @@ export class PaymentComponent implements OnInit {
       this.totalAmountInfo = duration * dailyPrice;
     });
   }
+
+  
 }

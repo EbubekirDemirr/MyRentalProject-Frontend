@@ -37,13 +37,9 @@
       </div>
 
       <div class="card-footer">
-        <button
-          routerLink="cars/payment/:carId"
-          class="btn btn-fill btn-outline-success"
-        >
-          Ödeme Sayfası
-          </button
-        >
+        <button data-bs-dismiss="modal" (click)="isCarAvaible()" class="btn btn-fill btn-outline-success" >
+          Ödemeye Geç
+        </button>
       </div>
     </div>
   </div>

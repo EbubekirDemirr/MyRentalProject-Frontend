@@ -5,6 +5,7 @@ import { ListResponseModel } from '../models/ListResponseModel';
 import { Brand } from '../models/brand';
 import { SingleResponseModel } from '../models/singleResponseModel';
 import { CarDetail } from '../models/carDetail';
+import { ResponseModel } from '../models/responseModel';
 
 @Injectable({
   providedIn: 'root',
@@ -25,5 +26,9 @@ export class BrandService {
   getCarByBrandId(brandId:number):Observable<ListResponseModel<CarDetail>>{
     let newPath=this.apiUrl1+"/Brand/getCarByBrandId?brandId="+brandId
     return this.httpClient.get<ListResponseModel<CarDetail>>(newPath)
+  }
+
+  brandAdd(brand:Brand):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl1+"/Brand/add",brand);
   }
 }

@@ -58,22 +58,22 @@ export class RentalAddComponent implements OnInit {
 
   isCarAvaible() {
     if (this.rentalAddForm.valid) {
-      this.rentalService.isCarAvaible(this.carDetail[0].carId).subscribe(
-        (response) => {
+      this.rentalService
+        .isCarAvaible(this.carDetail[0].carId)
+        .subscribe((response) => {
           this.toastrService.success(response.message, 'Başarılı');
           this.sendData();
-          this.router.navigate(['/cars/payment', this.carDetail[0].carId]);
-        },
-        (responseError) => {
-          this.toastrService.error(responseError.error);
-        }
-      );
-    }
-  }
+          this.router.navigate(["/cars/payment",this.carDetail[0].carId])
 
-  sendData(){
-    this.modelOfRental=Object.assign({},this.rentalAddForm.value);// buradan aldığım veriyi başka componentlarda da kullanmak için bu servisi yazdık
-    //console.log(this.modelOfRental)
-    this.paymentService.updateData(this.modelOfRental)
+        },
+        (responseError)=>{
+          this.toastrService.error(responseError.error)
+        }
+        );
+    } 
   }
+  sendData(){
+    this.modelOfRental=Object.assign({},this.rentalAddForm.value);
+    this.paymentService.updateData(this.modelOfRental)
+}
 }
